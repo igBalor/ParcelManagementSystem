@@ -48,7 +48,9 @@ public class Main {
                 System.out.println("\n===== Parcel Dashboard =====");
                 System.out.println("1. Book Parcel");
                 System.out.println("2. Track Parcel");
-                System.out.println("3. Logout");
+                System.out.println("3. Show all Details");
+                System.out.println("4. Delete Parcel");
+                System.out.println("5. Logout");
 
                 int option = sc.nextInt();
                 sc.nextLine();
@@ -108,7 +110,19 @@ public class Main {
                         parcelDAO.trackParcel(trackingCode);
 
              }
-              else if(option == 3) {
+            else if(option == 3) {
+                parcelDAO.displayAllParcels();
+             }
+             else if(option == 4) {
+
+                  System.out.print("Enter Parcel ID to Delete: ");
+                  int parcelId = sc.nextInt();
+                  sc.nextLine();
+
+                  parcelDAO.deleteParcel(parcelId);
+
+            }
+            else if(option == 5) {
 
                         System.out.println("Logged Out Successfully.");
 
